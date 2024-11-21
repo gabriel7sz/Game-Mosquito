@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jogo.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<!-- ^^ A propriedade onresize é um evento em JavaScript que é disparado quando a 
+janela do navegador é redimensionada. Esse evento pode ser utilizado para 
+executar um código sempre que o tamanho da janela muda, permitindo que o desenvolvedor 
+responsivamente ajuste o layout da página ou execute funções específicas. -->
+
+<body onresize="ajustaTamanhoPalcoJogo()">
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/imagens/coracao_cheio.png">
+            <img id="v2" src="imagens/imagens/coracao_cheio.png">
+            <img id="v3" src="imagens/imagens/coracao_cheio.png">
+        </div>
+
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById('cronometro').innerHTML = tempo
+        
+        //executando o método funcao randômica a cada 1seg
+        var criaMosquito = setInterval(function() {
+            posicaoRandomica()
+        }, criaMosquitoTempo)
+    </script>
+</body>
+</html>
